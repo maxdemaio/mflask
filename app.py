@@ -1,15 +1,15 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route('/')
 def home():
     # My home page route
-    return 'Hello, World!'
+    return render_template('index.html')
 
 @app.route('/software')
 def software():
     # My software page route
-    return 'This is my software page!'
+    return render_template('software.html')
 
 # TODO: Create api route for Github projects

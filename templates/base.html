@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% block head %}
+        <!--Add my styles and Bootstrap styling-->
+        <link rel="stylesheet" href="static/myStyles.css" />
+        <link rel="stylesheet" href="static/bootstrap.min.css" />
+        <title>Maxwell DeMaio - {% block title %}{% endblock %}</title>
+        <meta name="description"
+            content="Maxwell DeMaio's personal website. Here you can find out more about me, the projects I have completed, and the languages I speak/use." />
+{% endblock %}
+</head>
+
+<body>
+    <!--My navbar-->
+    <div>
+        {% block top %}
+            <nav class="navbar sticky-top navbar-light bg-light navbar-expand-lg ">
+                <a class="navbar-brand" href="{{ url_for('index') }}">Maxwell DeMaio</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('software') }}">Software</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav justify-content-end">
+                        <li>
+                            <a class="nav-link" href="mailto:maxwell.demaio@gmail.com">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        {% endblock %}
+    </div>
+
+    <!--My content-->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!--My footer-->
+    <footer class="container">
+        {% block footer %}
+            <p>&copy; Copyright 2020 Maxwell DeMaio. All Rights Reserved.</p>
+        {% endblock %}
+    </footer>
+
+</body>
+
+</html>

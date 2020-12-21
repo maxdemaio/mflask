@@ -1,222 +1,180 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}Software{% endblock %}
 
-<head>
-    <title>Max DeMaio - Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="static/myStyles.css">
-    <link rel="stylesheet" href="static/bootstrap.min.css">
-    <meta name="description"
-        content="Maxwell DeMaio's personal website. Here you can find out more about me, the projects I have completed, and the languages I speak/use." />
-</head>
+{% block head %}
+{{ super() }}
+{% endblock %}
 
-<body>
+{% block top %}
+{{ super() }}
+{% endblock %}
 
-    <div>
-        <nav class="navbar sticky-top navbar-light bg-light navbar-expand-lg ">
-            <a class="navbar-brand" href="index.html">Maxwell DeMaio</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="software.html">Software</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav justify-content-end">
-                    <li>
-                        <a class="nav-link" href="mailto:maxwell.demaio@gmail.com">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+{% block content %}
+<div class="container">
 
-        <main>
+    <!--My featured projects-->
+    <div class="myFeature">
+        <h2>Featured Projects. <span class="lead">My top picks.</span></h2>
+        <div class="row">
 
-            <div class="container">
-
-                <!--My featured projects-->
-                <div class="myFeature">
-                    <h2>Featured Projects. <span class="lead">My top picks.</span></h2>
-                    <div class="row">
-
-                        <div class="col-sm">
-                            <h3>LangLab</h3>
-                            <p>
-                                <a href="https://github.com/maxwelldemaio/langlab" class="myLink">LangLab</a> is a free
-                                and open source language learning
-                                website that allows users to
-                                practice the conjugations of the 25 most common verbs in a target language. Helpful
-                                resources have also been
-                                provided to help learners on their path.
-                            </p>
-                        </div>
-
-                        <div class="col-sm">
-                            <h3>Network</h3>
-                            <p>
-                                <a href="https://github.com/maxwelldemaio/Network" class="myLink">Network</a> is a
-                                Twitter-esque social network website for
-                                making posts and following users built
-                                with Django and jQuery. Once signed in, one can create/like posts and follow other users
-                                for a more
-                                personalized
-                                social feed.
-                            </p>
-                        </div>
-
-                        <div class="col-sm">
-                            <h3>Flack</h3>
-                            <p>
-                                <a href="https://github.com/maxwelldemaio/Flack" class="myLink">Flack</a> is an online
-                                messaging service built with
-                                Flask-SocketIO where
-                                one can send and receive messages in real time. Users can choose a display name, create
-                                channels to
-                                communicate
-                                in, as well as see and join
-                                existing channels.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm">
-                            <h3>Wiki</h3>
-                            <p>
-                                <a href="https://github.com/maxwelldemaio/wiki" class="myLink">Wiki</a> is a
-                                Wikipedia-like online encyclopedia
-                                that allows users to view, create, and edit entries. When looking at an entry's page,
-                                the entry (stored in
-                                Markdown) is converted to HTML.
-                            </p>
-                        </div>
-
-                        <div class="col-sm">
-                            <h3>Book Fox</h3>
-                            <p>
-                                <a href="https://github.com/maxwelldemaio/bookFox" class="myLink">Book Fox</a> is a
-                                book review web application where one can search for books, leave reviews for individual
-                                books,
-                                and see the reviews made by other people through the use of Goodreads' API.
-                            </p>
-                        </div>
-
-                        <div class="col-sm">
-                            <h3>Finance</h3>
-                            <p>
-                                <a href="https://github.com/maxwelldemaio/finance" class="myLink">Finance</a> is a
-                                business application
-                                via which you can manage portfolios of stocks, check stock prices, and buy/sell stocks
-                                utlizing IEX's API.
-                                Also,
-                                with Chart.js users
-                                can view a pie chart of their portfolio distribution.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--End of my featured projects-->
-
-                <!--My software repository-->
-                <!--TODO: Jinja for loop over SQL object-->
-                <div class="myFeature">
-                    <h2>Software Repository. <span class="lead">All my software in one place.</span></h2>
-                    <div class="table-responsive">
-                        <table class="table table-hover myTable">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Language</th>
-                                    <th scope="col">Created at</th>
-                                    <th scope="col">Forks</th>
-                                    <th scope="col">Open issues</th>
-                                    <th scope="col">Size (kb)</th>
-                                    <th scope="col">Stars</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td><a href="https://github.com/maxwelldemaio/wiki" class="myLink">Wiki</a></td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td><a href="https://github.com/maxwelldemaio/finance" class="myLink">Finance</a>
-                                    </td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td><a href="https://github.com/maxwelldemaio/langlab" class="myLink">LangLab</a>
-                                    </td>
-                                    <td>@twitter</td>
-                                    <td>@twitter</td>
-                                    <td>@twitter</td>
-                                    <td>@twitter</td>
-                                    <td>@twitter</td>
-                                    <td>@twitter</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!--End of my software repository-->
-
-                <!--My tech stack-->
-                <div class="myFeature">
-                    <h2>Tech Stack. <span class="lead">How I build web and business architecture.</span></h2>
-                    <ul class="list-group list-group-flush list-group-mine">
-                        <li class="list-group-item list-group-item-action"><strong>Languages:</strong> Python, SQL,
-                            HTML, CSS, Javascript, VBA</li>
-                        <li class="list-group-item list-group-item-action"><strong>Frameworks and Libraries:</strong>
-                            Django, Flask, Bootstrap</li>
-                        <li class="list-group-item list-group-item-action"><strong>Tools:</strong> Git, Markdown, MS
-                            Office</li>
-                    </ul>
-                </div>
-                <!--End of my tech stack-->
-
-                <hr>
-
+            <div class="col-sm">
+                <h3>LangLab</h3>
+                <p>
+                    <a href="https://github.com/maxwelldemaio/langlab" class="myLink">LangLab</a> is a free
+                    and open source language learning
+                    website that allows users to
+                    practice the conjugations of the 25 most common verbs in a target language. Helpful
+                    resources have also been
+                    provided to help learners on their path.
+                </p>
             </div>
 
-        </main>
+            <div class="col-sm">
+                <h3>Network</h3>
+                <p>
+                    <a href="https://github.com/maxwelldemaio/Network" class="myLink">Network</a> is a
+                    Twitter-esque social network website for
+                    making posts and following users built
+                    with Django and jQuery. Once signed in, one can create/like posts and follow other users
+                    for a more
+                    personalized
+                    social feed.
+                </p>
+            </div>
 
-        <footer class="container">
-            <p>&copy; Maxwell DeMaio 2020. All Rights Reserved.</p>
-        </footer>
+            <div class="col-sm">
+                <h3>Flack</h3>
+                <p>
+                    <a href="https://github.com/maxwelldemaio/Flack" class="myLink">Flack</a> is an online
+                    messaging service built with
+                    Flask-SocketIO where
+                    one can send and receive messages in real time. Users can choose a display name, create
+                    channels to
+                    communicate
+                    in, as well as see and join
+                    existing channels.
+                </p>
+            </div>
+        </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-</body>
+        <div class="row">
+            <div class="col-sm">
+                <h3>Wiki</h3>
+                <p>
+                    <a href="https://github.com/maxwelldemaio/wiki" class="myLink">Wiki</a> is a
+                    Wikipedia-like online encyclopedia
+                    that allows users to view, create, and edit entries. When looking at an entry's page,
+                    the entry (stored in
+                    Markdown) is converted to HTML.
+                </p>
+            </div>
 
-</html>
+            <div class="col-sm">
+                <h3>Book Fox</h3>
+                <p>
+                    <a href="https://github.com/maxwelldemaio/bookFox" class="myLink">Book Fox</a> is a
+                    book review web application where one can search for books, leave reviews for individual
+                    books,
+                    and see the reviews made by other people through the use of Goodreads' API.
+                </p>
+            </div>
+
+            <div class="col-sm">
+                <h3>Finance</h3>
+                <p>
+                    <a href="https://github.com/maxwelldemaio/finance" class="myLink">Finance</a> is a
+                    business application
+                    via which you can manage portfolios of stocks, check stock prices, and buy/sell stocks
+                    utlizing IEX's API.
+                    Also,
+                    with Chart.js users
+                    can view a pie chart of their portfolio distribution.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--End of my featured projects-->
+
+    <!--My software repository-->
+    <!--TODO: Jinja for loop over SQL object-->
+    <div class="myFeature">
+        <h2>Software Repository. <span class="lead">All my software in one place.</span></h2>
+        <div class="table-responsive">
+            <table class="table table-hover myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Language</th>
+                        <th scope="col">Created at</th>
+                        <th scope="col">Forks</th>
+                        <th scope="col">Open issues</th>
+                        <th scope="col">Size (kb)</th>
+                        <th scope="col">Stars</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><a href="https://github.com/maxwelldemaio/wiki" class="myLink">Wiki</a></td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><a href="https://github.com/maxwelldemaio/finance" class="myLink">Finance</a>
+                        </td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><a href="https://github.com/maxwelldemaio/langlab" class="myLink">LangLab</a>
+                        </td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--End of my software repository-->
+
+    <!--My tech stack-->
+    <div class="myFeature">
+        <h2>Tech Stack. <span class="lead">How I build web and business architecture.</span></h2>
+        <ul class="list-group list-group-flush list-group-mine">
+            <li class="list-group-item list-group-item-action"><strong>Languages:</strong> Python, SQL,
+                HTML, CSS, Javascript, VBA</li>
+            <li class="list-group-item list-group-item-action"><strong>Frameworks and Libraries:</strong>
+                Django, Flask, Bootstrap</li>
+            <li class="list-group-item list-group-item-action"><strong>Tools:</strong> Git, Markdown, MS
+                Office</li>
+        </ul>
+    </div>
+    <!--End of my tech stack-->
+
+    <hr>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+{% endblock %}

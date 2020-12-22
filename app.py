@@ -1,7 +1,6 @@
 import os
 from github import Github
 from flask import Flask, render_template
-from flask_paginate import Pagination, get_page_args
 
 # Load environment variables
 from dotenv import load_dotenv
@@ -38,13 +37,4 @@ def software():
                         "issues": repo.open_issues_count, "size": repo.size, "stars": repo.stargazers_count}
             myRepos.append(currRepo)
 
-    ## Paginate Github repos
-    page, per_page, offset = get_page_args(page_parameter='page',
-                                           per_page_parameter='per_page')
-    def get_repos(offset=0, per_page=10):
-        return myRepos[offset: offset + per_page]
-    pagination_repos = get_repos()
-    pagination = Pagination(page=page, per_page=per_page, total=len(myRepos),
-                            css_framework='bootstrap4')
-
-    return render_template('software.html', myRepos=pagination_repos, pagination=pagination)
+    return render_template('software.html', myRepos=myRepos)

@@ -95,6 +95,7 @@
         </div>
         <!--End of my featured projects-->
 
+        
         <!--My software repository-->
         <!--TODO: Jinja for loop over SQL object-->
         <div class="myFeature">
@@ -115,41 +116,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td><a href="https://github.com/maxwelldemaio/wiki" class="myLink">Wiki</a></td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td><a href="https://github.com/maxwelldemaio/finance" class="myLink">Finance</a>
-                            </td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td><a href="https://github.com/maxwelldemaio/langlab" class="myLink">LangLab</a>
-                            </td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                        </tr>
+                        {% for dict_item in myRepos %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td><a href="{{dict_item.url}}" class="myLink">{{dict_item.name}}</a></td>
+                                <td>{{dict_item.description}}</td>
+                                <td>{{dict_item.language}}</td>
+                                <td>{{dict_item.creation}}</td>
+                                <td>{{dict_item.forks}}</td>
+                                <td>{{dict_item.issues}}</td>
+                                <td>{{dict_item.size}}</td>
+                                <td>{{dict_item.stars}}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

@@ -97,7 +97,6 @@
 
         
         <!--My software repository-->
-        <!--TODO: Jinja for loop over SQL object-->
         <div class="myFeature">
             <h2>Software Repository. <span class="lead">All my software in one place.</span></h2>
             <div class="table-responsive">
@@ -131,6 +130,7 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                {{ pagination.links }}
             </div>
         </div>
         <!--End of my software repository-->

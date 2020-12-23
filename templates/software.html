@@ -3,8 +3,9 @@
 
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -109,7 +110,7 @@
         <div class="myFeature">
             <h2>Software Repository. <span class="lead">All my software in one place.</span></h2>
             <div class="table-responsive">
-                <table id="myTable">
+                <table class="table table-striped" id="myTable">
                     <caption>View all of my projects on <a href="https://github.com/maxwelldemaio" class="myLink">GitHub</a></caption>
                     <thead>
                         <tr>

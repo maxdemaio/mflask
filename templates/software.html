@@ -3,6 +3,15 @@
 
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+</script>
+
 {% endblock %}
 
 {% block top %}
@@ -99,8 +108,9 @@
         <!--My software repository-->
         <div class="myFeature">
             <h2>Software Repository. <span class="lead">All my software in one place.</span></h2>
-            <div class="table-responsive">
-                <table class="table table-hover myTable">
+            <div>
+                <table id="myTable">
+                    <caption>View all of my projects on <a href="https://github.com/maxwelldemaio" class="myLink">GitHub</a></caption>
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -149,8 +159,9 @@
         <!--End of my tech stack-->
 
         <hr>
-
+    
     </div>
+
 {% endblock %}
 
 {% block footer %}

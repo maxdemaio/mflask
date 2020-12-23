@@ -9,7 +9,9 @@
 
 <script>
     $(document).ready(function () {
-        $('#myTable').DataTable();
+        $('#myTable').DataTable({
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+        });
     });
 </script>
 
@@ -109,7 +111,7 @@
         <!--My software repository-->
         <div class="myFeature">
             <h2>Software Repository. <span class="lead">All my software in one place.</span></h2>
-            <div class="table-responsive">
+            <div class="table-responsive" style="padding: 5px;">
                 <table class="table table-striped" id="myTable">
                     <caption>View all of my projects on <a href="https://github.com/maxwelldemaio" class="myLink">GitHub</a></caption>
                     <thead>

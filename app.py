@@ -27,15 +27,15 @@ def software():
 
     ## Fetch Github objects:
     for repo in g.get_user().get_repos():
-        # TODO: Don't fetch forked repos
-        # Only fetch public repositories
-        if repo.private == False:
+        # Only fetch public and non-forked repositories
+        if repo.private == False and repo.fork == False:
             # Create repo key/value pair and add to myRepos:
             # Name, URL, Description, Language, Created at, Forks,
             # Open issues, Size (kb), Star count
             currRepo = {"name": repo.name, "url": repo.html_url, "description": repo.description,
-                        "language": repo.language, "creation": repo.created_at, "forks": repo.forks_count,
-                        "issues": repo.open_issues_count, "size": repo.size, "stars": repo.stargazers_count}
+                        "language": repo.language, "creation": repo.created_at.date(),
+                        "forks": repo.forks_count, "issues": repo.open_issues_count, 
+                        "size": repo.size, "stars": repo.stargazers_count}
             myRepos.append(currRepo)
 
     return render_template('software.html', myRepos=myRepos)

@@ -7,10 +7,12 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 
+<!--My table via jQuery dataTables-->
 <script>
     $(document).ready(function () {
         $('#myTable').DataTable({
-            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+            "order": [[3, "desc"]]
         });
     });
 </script>
@@ -116,7 +118,6 @@
                     <caption>View all of my projects on <a href="https://github.com/maxwelldemaio" class="myLink">GitHub</a></caption>
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
                             <th scope="col">Language</th>
@@ -130,7 +131,6 @@
                     <tbody>
                         {% for dict_item in myRepos %}
                             <tr>
-                                <th scope="row">{{ loop.index }}</th>
                                 <td><a href="{{dict_item.url}}" class="myLink">{{dict_item.name}}</a></td>
                                 <td>{{dict_item.description}}</td>
                                 <td>{{dict_item.language}}</td>

@@ -27,6 +27,7 @@ def software():
 
     ## Fetch Github objects:
     for repo in g.get_user().get_repos():
+        # TODO: Don't fetch forked repos
         # Only fetch public repositories
         if repo.private == False:
             # Create repo key/value pair and add to myRepos:

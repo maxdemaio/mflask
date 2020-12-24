@@ -60,7 +60,14 @@
     <!--My footer-->
     <footer class="container">
         {% block footer %}
-            <p>&copy; Copyright 2020 Maxwell DeMaio. All Rights Reserved.</p>
+            <div id="myFooter">
+                <span>&copy; Maxwell DeMaio {{ now.year }}</span>
+                <span id="mySocials">
+                    <a href="https://github.com/maxwelldemaio"><img src="../static/github.png" alt="Github icon"></a>
+                    <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="../static/linkedin.png" alt="LinkedIn icon"></a>
+                    <a href="mailto:maxwell.demaio@gmail.com"><img src="../static/email.png" alt="Email icon"></a>
+                </span>
+            </div>
         {% endblock %}
     </footer>
 

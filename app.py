@@ -1,5 +1,6 @@
 import os
 from github import Github
+from datetime import datetime
 from flask import Flask, render_template
 
 # Load environment variables
@@ -16,12 +17,11 @@ g = Github(os.getenv("GITHUB_TOKEN"))
 @app.route('/')
 def index():
     """My home page route"""
-    return render_template('index.html')
+    return render_template('index.html', now=datetime.utcnow())
 
 @app.route('/software')
 def software():
     """My software page route"""
-
     # List of repos and their information
     myRepos = []
 
@@ -38,4 +38,4 @@ def software():
                         "size": repo.size, "stars": repo.stargazers_count}
             myRepos.append(currRepo)
 
-    return render_template('software.html', myRepos=myRepos)
+    return render_template('software.html', myRepos=myRepos, now=datetime.utcnow())

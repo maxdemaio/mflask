@@ -11,6 +11,17 @@ footer {
     margin-top: 30px;
 }
 
+/** Socials stylings **/
+#mySocials img {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+#myFooter {
+    padding: 10px;
+}
+
 /** Anchor tag stylings **/
 .myLink {
     text-decoration: none;

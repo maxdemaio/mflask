@@ -1,25 +1,25 @@
 main {
     margin-top: 25px;
-    padding-bottom: 20px;
-}
-
-footer {
-    padding-bottom: 20px;
 }
 
 .myFeature {
     margin-top: 30px;
 }
 
-/** Socials stylings **/
-#mySocials img {
+/** Footer stylings **/
+#myFooter {
+    padding: 15px;
+}
+
+#mySignature {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#myFooter img {
     width: 25px;
     height: 25px;
     margin-left: 5px;
-}
-
-#myFooter {
-    padding: 10px;
 }
 
 /** Anchor tag stylings **/

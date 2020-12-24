@@ -57,19 +57,21 @@
         {% block content %}{% endblock %}
     </main>
 
+    <div class="container">
+        <hr class="my-2">
+    </div>
+    
     <!--My footer-->
     <footer class="container">
         {% block footer %}
             <div id="myFooter">
-                <span>&copy; Maxwell DeMaio {{ now.year }}</span>
-                <span id="mySocials">
-                    <a href="https://github.com/maxwelldemaio"><img src="../static/github.png" alt="Github icon"></a>
-                    <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="../static/linkedin.png" alt="LinkedIn icon"></a>
-                    <a href="mailto:maxwell.demaio@gmail.com"><img src="../static/email.png" alt="Email icon"></a>
-                </span>
+                <span id="mySignature">&copy; {{ now.year }} Maxwell DeMaio</span>
+                <a href="https://github.com/maxwelldemaio"><img src="../static/github.png" alt="Github icon"></a>
+                <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="../static/linkedin.png" alt="LinkedIn icon"></a>
+                <a href="mailto:maxwell.demaio@gmail.com"><img src="../static/email.png" alt="Email icon"></a>
             </div>
         {% endblock %}
-    </footer>
+   </footer>
 
 </body>
 

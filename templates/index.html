@@ -9,20 +9,19 @@
 {{ super() }}
 <div class="jumbotron jumbotron-fluid text-white" style="background-color: #333;">
     <div class="container">
-        <div class="row">
+        <div class="row d-flex flex-wrap align-items-center">
             <div class="col-md-8">
                 <h1 class="display-1">Maxwell DeMaio</h1>
                 <p class="lead">
                     Self-learning business, computer science, and language through research & development.
                     Filming the entire process on YouTube.
                 </p>
-                <button type="button" class="btn btn-light">View my projects</button>
+                <a href="{{ url_for('software') }}" class="btn btn-light btn-lg" role="button" aria-disabled="true">View my projects</a>
             </div>
             <div class="col-md-4 p-4">
-                <img class="w-100 rounded-circle" src="../static/mePortfolio.jpg" alt="Profile Picture">
+                <img class="w-100 rounded-circle d-block m-auto" src="../static/mePortfolio.jpg" alt="Profile Picture">
             </div>
         </div>
-
     </div>
 </div>
 {% endblock %}
@@ -40,10 +39,15 @@
         growing my skills and gaining exposure to a variety of technology,
         whether that be through work or personal projects.
         When I'm not glued to my computer, I enjoy playing the guitar, chess, and learning languages.
-        Feel free to reach out and contact me at any of the links below.
     </p>
-
-    <hr>
+    <p>
+        You can follow me on <a href="https://twitter.com/maxwelldemaio" class="myLink">Twitter</a>
+        where I mostly tweet about technology and business. Most of my work is open source
+        and publicly available on <a href="https://github.com/maxwelldemaio" class="myLink">GitHub</a>.
+        Feel free to reach out and contact me at any of the links on my website.
+    </p>
+        
+    
 
 </div>
 {% endblock %}

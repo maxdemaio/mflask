@@ -99,7 +99,7 @@ Non-active <li> tags have class 'paginate_button page-item '**/
 .page-link:focus {
     z-index: 9;
     outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(79, 192, 141, 0.5);
+    box-shadow: 0 0 0 .2rem #cccccc;
 }
 
 /** Custom search/show form styles **/

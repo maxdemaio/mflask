@@ -107,3 +107,6 @@ Non-active <li> tags have class 'paginate_button page-item '**/
     border: .05rem solid grey;
     box-shadow: 0 0 0 .2rem #cccccc;
 }
+.form-control.form-control-sm {
+    border: .05rem solid grey;
+}

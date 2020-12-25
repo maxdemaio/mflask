@@ -3,14 +3,9 @@
 
 <head>
 {% block head %}
-        <!--Add my styles and Bootstrap styling-->
-        <link rel="stylesheet" href="static/myStyles.css" />
-        <link rel="stylesheet" href="static/bootstrap.min.css" />
-        <title>Maxwell DeMaio - {% block title %}{% endblock %}</title>
-        <meta name="description"
-            content="Maxwell DeMaio's personal website. Here you can find out more about me, the projects I have completed, and the languages I speak/use." />
-            
-        <!--Bootstrap JS-->
+        <!--Bootstrap CSS/JS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -20,6 +15,16 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+
+        <!--DataTables CSS/JS-->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
+        <!--My CSS/JS-->
+        <link rel="stylesheet" href="static/myStyles.css" />
+        <meta name="description"
+            content="Maxwell DeMaio's personal website. Here you can find out more about me, the projects I have completed, and the languages I speak/use." />
 {% endblock %}
 </head>
 
@@ -27,7 +32,7 @@
     <!--My navbar-->
     <div>
         {% block top %}
-            <nav class="navbar sticky-top navbar-light bg-light navbar-expand-lg ">
+            <nav class="navbar fixed-top navbar-light bg-light navbar-expand-lg ">
                 <a class="navbar-brand" href="{{ url_for('index') }}">Maxwell DeMaio</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,9 +71,9 @@
         {% block footer %}
             <div id="myFooter">
                 <span id="mySignature">&copy; {{ now.year }} Maxwell DeMaio</span>
-                <a href="https://github.com/maxwelldemaio"><img src="../static/github.png" alt="Github icon"></a>
-                <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="../static/linkedin.png" alt="LinkedIn icon"></a>
-                <a href="mailto:maxwell.demaio@gmail.com"><img src="../static/email.png" alt="Email icon"></a>
+                <a href="https://github.com/maxwelldemaio"><img src="static/github.png" alt="Github icon"></a>
+                <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="static/linkedin.png" alt="LinkedIn icon"></a>
+                <a href="mailto:maxwell.demaio@gmail.com"><img src="static/email.png" alt="Email icon"></a>
             </div>
         {% endblock %}
    </footer>

@@ -3,10 +3,6 @@
 
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" href="../static/dataTables.bootstrap4.min.css">
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-
 <!--My table via jQuery dataTables-->
 <script>
     $(document).ready(function () {
@@ -16,7 +12,6 @@
         });
     });
 </script>
-
 {% endblock %}
 
 {% block top %}

@@ -23,7 +23,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 
     <!--My CSS/JS-->
-    <link rel="stylesheet" href="static/myStyles.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='myStyles.css') }}" />
     <meta name="description"
         content="Maxwell DeMaio's personal website. Here you can find out more about me, the projects I have completed, and the tech stack I use." />
 {% endblock %}
@@ -72,9 +72,9 @@
         {% block footer %}
             <div id="myFooter">
                 <span id="mySignature">&copy; {{ now.year }} Maxwell DeMaio</span>
-                <a href="https://github.com/maxwelldemaio"><img src="static/github.png" alt="Github icon"></a>
-                <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="static/linkedin.png" alt="LinkedIn icon"></a>
-                <a href="mailto:maxwell.demaio@gmail.com"><img src="static/email.png" alt="Email icon"></a>
+                <a href="https://github.com/maxwelldemaio"><img src="{{ url_for('static', filename='github.png') }}" alt="Github icon"></a>
+                <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn icon"></a>
+                <a href="mailto:maxwell.demaio@gmail.com"><img src="{{ url_for('static', filename='email.png') }}" alt="Email icon"></a>
             </div>
         {% endblock %}
    </footer>

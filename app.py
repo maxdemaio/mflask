@@ -57,3 +57,6 @@ def software():
     # List of repos and their information from cache or Github API
     myRepos = get_repos()
     return render_template('software.html', myRepos=myRepos, now=datetime.utcnow())
+
+if __name__ == '__main__':
+    app.run()

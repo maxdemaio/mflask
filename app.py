@@ -24,7 +24,6 @@ def get_repos():
     # Check the Redis hashmap for our repos object
     myRepos = r.get(name="myRepos")
     if myRepos is None:
-        print("Fetching repos data from the Github API...")
         # Create a Github instance using an access token
         g = Github(os.getenv("GITHUB_TOKEN"))
         updatedRepos = []
@@ -47,9 +46,7 @@ def get_repos():
         return updatedRepos
     else:
         # Read saved JSON str from Redis and unpack into Python object
-        print("Fetching repos data from the Redis cache...")
         myRepos = json.loads(myRepos.decode('utf-8'))
-        # TODO: Unserialize all date strings to datetime objects
         return myRepos
 
 

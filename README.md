@@ -7,7 +7,7 @@ My personal website built with Flask
 
 ## Github API/Redis
 Software route overall approach:
-- Client makes a request to the backend and immediately respond if we have the information in our Redis cache. We can decide to call the Github API based on if the information has expired from the cache (checking the hash-map).
+- Client makes a request to the backend and it immediately responds if the information is our Redis cache. We can decide to call the Github API based on if the information has expired from the cache (checking the hash-map).
     - Reason: Reduce API calls and response time
 
 Evicting/Loading data from/into the Redis cache:

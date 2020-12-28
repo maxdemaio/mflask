@@ -49,6 +49,9 @@ def get_repos():
         myRepos = json.loads(myRepos.decode('utf-8'))
         return myRepos
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page_not_found.html', now=datetime.utcnow()), 404
 
 @app.route('/')
 def index():

@@ -3,7 +3,6 @@
 
 <head>
 {% block head %}
-    <title>Max DeMaio: {% block title %}{% endblock %}</title>
     <!--Bootstrap CSS/JS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -22,7 +21,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 
-    <!--My CSS/JS-->
+    <!--My CSS-->
     <link rel="stylesheet" href="{{ url_for('static', filename='myStyles.css') }}" />
     <meta name="description"
         content="Maxwell DeMaio's personal website. Here you can find out more about me, the projects I have completed, and the tech stack I use." />
@@ -30,9 +29,9 @@
 </head>
 
 <body>
-    <!--My navbar-->
     <div>
         {% block top %}
+            <!--My navbar-->
             <nav class="navbar fixed-top navbar-light bg-light navbar-expand-lg ">
                 <a class="navbar-brand" href="{{ url_for('index') }}">Maxwell DeMaio</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -55,6 +54,7 @@
                     </ul>
                 </div>
             </nav>
+            <!--End of my navbar-->
         {% endblock %}
     </div>
 
@@ -62,12 +62,12 @@
     <main>
         {% block content %}{% endblock %}
     </main>
-
+    <!--End of my content-->
+    
+    <!--My footer-->
     <div class="container">
         <hr class="my-2">
     </div>
-    
-    <!--My footer-->
     <footer class="container">
         {% block footer %}
             <div id="myFooter">
@@ -78,6 +78,7 @@
             </div>
         {% endblock %}
    </footer>
+   <!--End of my footer-->
 
 </body>
 

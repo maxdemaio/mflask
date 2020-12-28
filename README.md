@@ -15,4 +15,4 @@ Evicting/Loading data from/into the Redis cache:
 - Note: Only problem would be that Github has new information, but our cache isn't updated. However, this is okay if we're not too consistent since it isn't sensitive information. The Redis server is run locally for development and Heroku-Redis is used in production. Also, I don't use md5 hashes for my keys since I'm not storing specific profiles, names, etc. that are based upon the request. I only have one single object I'm looking for, my software repositories.
 
 ## Static files
-For Bootstrap's libraries and the jQuery dataTables plug-in I use their CDNs. For the rest of my static files I md5 hash them with [Flask-Static-Digest]() and use Amazon S3 for storage.
+For Bootstrap's libraries and the jQuery dataTables plug-in I use their CDNs. For the rest of my static files I md5 hash them with [Flask-Static-Digest](https://github.com/nickjj/flask-static-digest) and use Amazon S3 for storage.

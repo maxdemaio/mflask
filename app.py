@@ -1,6 +1,6 @@
 import json, os, redis
 from github import Github
-from datetime import datetime
+from datetime import date, datetime
 from flask import Flask, render_template
 from flask_static_digest import FlaskStaticDigest
 
@@ -36,7 +36,7 @@ def get_repos():
                 # Name, URL, Description, Language, Created at, Forks,
                 # Open issues, Size (kb), Star count
                 currRepo = {"name": repo.name, "url": repo.html_url, "description": repo.description,
-                            "language": repo.language, "creation": repo.created_at,
+                            "language": repo.language, "creation": repo.created_at.date(),
                             "forks": repo.forks_count, "issues": repo.open_issues_count,
                             "size": repo.size, "stars": repo.stargazers_count}
                 updatedRepos.append(currRepo)
@@ -48,6 +48,7 @@ def get_repos():
         # Read saved JSON str from Redis and unpack into Python object
         myRepos = json.loads(myRepos.decode('utf-8'))
         return myRepos
+
 
 @app.errorhandler(404)
 def page_not_found(error):

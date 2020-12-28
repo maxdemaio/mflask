@@ -2,6 +2,7 @@ import json, os, redis
 from github import Github
 from datetime import datetime
 from flask import Flask, render_template
+from flask_static_digest import FlaskStaticDigest
 
 # Load environment variables
 from dotenv import load_dotenv
@@ -11,6 +12,12 @@ load_dotenv()
 app = Flask(__name__)
 r = redis.Redis(host='localhost', port=6379, db=0)
 
+# Flask-Static-Digest config
+app.config['FLASK_STATIC_DIGEST_GZIP_FILES'] = False
+# TODO: Add s3 bucket link
+app.config['FLASK_STATIC_DIGEST_HOST_URL'] = None
+flask_static_digest = FlaskStaticDigest()
+flask_static_digest.init_app(app)
 
 def get_repos():
     """ Return my software repositories from the Redis cache or the Github API"""
@@ -36,7 +43,7 @@ def get_repos():
                 updatedRepos.append(currRepo)
         # Convert python object to JSON str and save to Redis cache
         json_repos = json.dumps(updatedRepos, indent=4, sort_keys=True, default=str)
-        r.set(name="myRepos", value=json_repos, ex=120)
+        r.set(name="myRepos", value=json_repos, ex=43200)
         return updatedRepos
     else:
         # Read saved JSON str from Redis and unpack into Python object

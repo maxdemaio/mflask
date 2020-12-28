@@ -1,0 +1,112 @@
+/** Overall stylings **/
+main {
+    margin-top: 25px;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.myFeature {
+    margin-top: 30px;
+}
+
+/** Footer stylings **/
+#myFooter {
+    padding: 15px;
+}
+
+#mySignature {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#myFooter img {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+/** Anchor tag stylings **/
+.myLink {
+    text-decoration: none;
+    color: #212529;
+    position: relative;
+}
+
+/* Mouse over link */
+.myLink:hover {
+  color: #212529;
+  text-decoration: none;
+}
+
+.myLink:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 60%;
+    left: -0.1em;
+    right: -0.1em;
+    bottom: 0;
+    transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+    background-color: rgba(79, 192, 141, 0.5);
+}
+
+.myLink:hover:after {
+    top: 0%;
+}
+
+/** Custom Pagination Styles
+Notes:
+Outer <ul> has class 'pagination'
+<li> is the outer container for the <a>
+All <a> tags have class 'page-link'
+Active <li> tags have class 'paginate_button page-item active'
+Non-active <li> tags have class 'paginate_button page-item '**/
+
+/* Non-active state */
+.paginate_button.page-item > a{
+    color: #333 !important;
+}
+.paginate_button.page-item > a:focus,
+.paginate_button.page-item > a:hover {
+    color: #1a1a1a !important;
+    background-color: #f2f2f2 !important;
+}
+
+/* Active state */
+.pagination > .active > a
+{
+    color: white !important;
+    background-color: #333 !important;
+    border: solid 1px #333 !important;
+}
+.pagination > .active > a:focus { 
+    z-index: 10;
+    color: white !important;
+    background-color: #333 !important;
+}
+.pagination > .active > a:hover {
+    color: white !important;
+    background-color: #333 !important;
+    border: solid 1px #333 !important;
+}
+.paginate_button.page-item.active {
+    z-index: 10;
+}
+
+/* Both active and non-active */
+.page-link:focus {
+    z-index: 9;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem #cccccc;
+}
+
+/** Custom search/show form styles **/
+.form-control.form-control-sm:focus {
+    border: .05rem solid grey;
+    box-shadow: 0 0 0 .2rem #cccccc;
+}
+.form-control.form-control-sm {
+    border: .05rem solid grey;
+}

@@ -11,7 +11,7 @@ Software route overall approach:
     - Reason: Reduce API calls and response time
 
 Evicting/Loading data from/into the Redis cache:
-- Cache Policy: LRU (update every 12 hours)
+- Cache Policy: LRU (update every 6 hours)
 - Note: Only problem would be that Github has new information, but our cache isn't updated. However, this is okay if we're not too consistent since it isn't sensitive information. The Redis server is run locally for development and Heroku-Redis is used in production. Also, I don't use md5 hashes for my keys since I'm not storing specific profiles, names, etc. that are based upon the request. I only have one single object I'm looking for, my software repositories.
 
 ## Static files

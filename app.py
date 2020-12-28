@@ -42,7 +42,7 @@ def get_repos():
                 updatedRepos.append(currRepo)
         # Convert python object to JSON str and save to Redis cache
         json_repos = json.dumps(updatedRepos, indent=4, sort_keys=True, default=str)
-        r.set(name="myRepos", value=json_repos, ex=43200)
+        r.set(name="myRepos", value=json_repos, ex=21600)
         return updatedRepos
     else:
         # Read saved JSON str from Redis and unpack into Python object

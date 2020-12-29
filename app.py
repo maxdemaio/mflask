@@ -15,9 +15,10 @@ r = redis.Redis(host='localhost', port=6379, db=0)
 # Flask-Static-Digest config
 app.config['FLASK_STATIC_DIGEST_GZIP_FILES'] = False
 # TODO: Add s3 bucket link
-app.config['FLASK_STATIC_DIGEST_HOST_URL'] = None
+app.config['FLASK_STATIC_DIGEST_HOST_URL'] = 'https://maxdem-mflask.s3.amazonaws.com/'
 flask_static_digest = FlaskStaticDigest()
 flask_static_digest.init_app(app)
+
 
 def get_repos():
     """ Return my software repositories from the Redis cache or the Github API"""
@@ -28,13 +29,9 @@ def get_repos():
         g = Github(os.getenv("GITHUB_TOKEN"))
         updatedRepos = []
         
-        # Fetch Github objects:
+        # Fetch Github objects (public and non-forked):
         for repo in g.get_user().get_repos():
-            # Only fetch public and non-forked repositories
             if repo.private == False and repo.fork == False:
-                # Create repo key/value pair and add to updatedRepos:
-                # Name, URL, Description, Language, Created at, Forks,
-                # Open issues, Size (kb), Star count
                 currRepo = {"name": repo.name, "url": repo.html_url, "description": repo.description,
                             "language": repo.language, "creation": repo.created_at.date(),
                             "forks": repo.forks_count, "issues": repo.open_issues_count,

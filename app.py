@@ -10,7 +10,7 @@ load_dotenv()
 
 # Intialize app and Redis connection
 app = Flask(__name__)
-r = redis.Redis(host='localhost', port=6379, db=0)
+r = redis.Redis.from_url(os.getenv("REDIS_URL"))
 
 # Flask-Static-Digest config
 app.config['FLASK_STATIC_DIGEST_GZIP_FILES'] = False

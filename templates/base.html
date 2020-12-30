@@ -65,13 +65,16 @@
     <div class="container">
         <hr class="my-2">
     </div>
-    <footer class="container">
+    <footer class="container" style="padding: 10px;">
         {% block footer %}
             <div id="myFooter">
                 <span id="mySignature">&copy; {{ now.year }} Maxwell DeMaio</span>
-                <a href="https://github.com/maxwelldemaio"><img src="{{ static_url_for('static', filename='github.png') }}" alt="Github icon"></a>
-                <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="{{ static_url_for('static', filename='linkedin.png') }}" alt="LinkedIn icon"></a>
-                <a href="mailto:maxwell.demaio@gmail.com"><img src="{{ static_url_for('static', filename='email.png') }}" alt="Email icon"></a>
+                <a href="https://github.com/maxwelldemaio"><img src="{{ static_url_for('static', filename='github.png') }}" 
+                    width="25px" height="25px" alt="Github icon"></a>
+                <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="{{ static_url_for('static', filename='linkedin.png') }}" 
+                    width="25px" height="25px" alt="LinkedIn icon"></a>
+                <a href="mailto:maxwell.demaio@gmail.com"><img src="{{ static_url_for('static', filename='email.png') }}" 
+                    width="25px" height="25px" alt="Email icon"></a>
             </div>
         {% endblock %}
    </footer>

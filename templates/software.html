@@ -14,7 +14,10 @@
     $(document).ready(function () {
         $('#myTable').DataTable({
             "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
-            "order": [[3, "desc"]]
+            "order": [[3, "desc"]],
+            "language": {
+                "emptyTable": "Unable to contact Github API."
+            }
         });
     });
 </script>
@@ -155,7 +158,7 @@
                     HTML, CSS, Javascript, VBA</li>
                 <li class="list-group-item list-group-item-action"><strong>Frameworks and Libraries:</strong>
                     Django, Flask, Bootstrap</li>
-                <li class="list-group-item list-group-item-action"><strong>Tools:</strong> Git, Markdown, MS
+                <li class="list-group-item list-group-item-action"><strong>Tools:</strong> Git, Redis, Markdown, MS
                     Office</li>
             </ul>
         </div>

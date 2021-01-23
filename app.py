@@ -20,29 +20,34 @@ flask_static_digest.init_app(app)
 
 
 def get_repos():
-    """ Return my software repositories from the Redis cache or the Github API"""
-    # Check the Redis hashmap for our repos object
-    myRepos = r.get(name="myRepos")
-    if myRepos is None:
-        # Create a Github instance using an access token
-        g = Github(os.getenv("GITHUB_TOKEN"))
-        updatedRepos = []
-        
-        # Fetch Github objects (public and non-forked):
-        for repo in g.get_user().get_repos():
-            if repo.private == False and repo.fork == False:
-                currRepo = {"name": repo.name, "url": repo.html_url, "description": repo.description,
-                            "language": repo.language, "creation": repo.created_at.date(),
-                            "forks": repo.forks_count, "issues": repo.open_issues_count,
-                            "size": repo.size, "stars": repo.stargazers_count}
-                updatedRepos.append(currRepo)
-        # Convert python object to JSON str and save to Redis cache
-        json_repos = json.dumps(updatedRepos, indent=4, sort_keys=True, default=str)
-        r.set(name="myRepos", value=json_repos, ex=21600)
-        return updatedRepos
-    else:
-        # Read saved JSON str from Redis and unpack into Python object
-        myRepos = json.loads(myRepos.decode('utf-8'))
+    """ Return my software repositories from 
+        the Redis cache or the Github API"""
+    try:
+        # Check the Redis hashmap for our repos object
+        myRepos = r.get(name="myRepos")
+        if myRepos is None:
+            # Create a Github instance using an access token
+            g = Github(os.getenv("GITHUB_TOKEN"))
+            updatedRepos = []
+            
+            # Fetch Github objects (public and non-forked):
+            for repo in g.get_user().get_repos():
+                if repo.private == False and repo.fork == False:
+                    currRepo = {"name": repo.name, "url": repo.html_url, "description": repo.description,
+                                "language": repo.language, "creation": repo.created_at.date(),
+                                "forks": repo.forks_count, "issues": repo.open_issues_count,
+                                "size": repo.size, "stars": repo.stargazers_count}
+                    updatedRepos.append(currRepo)
+            # Convert python object to JSON str and save to Redis cache
+            json_repos = json.dumps(updatedRepos, indent=4, sort_keys=True, default=str)
+            r.set(name="myRepos", value=json_repos, ex=21600)
+            return updatedRepos
+        else:
+            # Read saved JSON str from Redis and unpack into Python object
+            myRepos = json.loads(myRepos.decode('utf-8'))
+            return myRepos
+    except:
+        myRepos = []
         return myRepos
 
 

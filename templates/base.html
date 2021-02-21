@@ -55,31 +55,43 @@
         {% endblock %}
     </div>
 
-    <!--My content-->
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-    <!--End of my content-->
     
-    <!--My footer-->
-    <div class="container">
-        <hr class="my-2">
-    </div>
-    <footer class="container" style="padding: 10px;">
-        {% block footer %}
-            <div id="myFooter">
-                <span id="mySignature">&copy; {{ now.year }} Maxwell DeMaio</span>
-                <a href="https://github.com/maxwelldemaio"><img src="{{ static_url_for('static', filename='github.png') }}" 
-                    width="25px" height="25px" alt="Github icon"></a>
-                <a href="https://www.linkedin.com/in/maxwell-demaio"><img src="{{ static_url_for('static', filename='linkedin.png') }}" 
-                    width="25px" height="25px" alt="LinkedIn icon"></a>
-                <a href="mailto:maxwell.demaio@gmail.com"><img src="{{ static_url_for('static', filename='email.png') }}" 
-                    width="25px" height="25px" alt="Email icon"></a>
-            </div>
-        {% endblock %}
-   </footer>
-   <!--End of my footer-->
+    <main class="container">
+        <!--My content-->
+        {% block content %}{% endblock %}
+        <!--End of my content-->
 
+        <hr class="my-2">
+
+        <footer>
+            {% block footer %}
+                <div>
+                    <span id="mySignature">&copy; {{ now.year }} Maxwell DeMaio</span>
+                </div>
+                <div>
+                    <a href="https://github.com/maxwelldemaio"><img src="{{ static_url_for('static', filename='github.png') }}"
+                            width="25px" height="25px" alt="Github icon"></a>
+                    <a href="https://www.linkedin.com/in/maxwell-demaio"><img
+                            src="{{ static_url_for('static', filename='linkedin.png') }}" width="25px" height="25px"
+                            alt="LinkedIn icon"></a>
+                    <a href="https://twitter.com/maxwelldemaio"><img src="{{ static_url_for('static', filename='twitter.png') }}"
+                            width="25px" height="25px" alt="Twitter icon"></a>
+                    <a href="https://www.youtube.com/channel/UCXzTmvY30ODYPrpVImJEVBQ"><img src="{{ static_url_for('static', filename='youtube.png') }}"
+                            width="25px" height="25px" alt="YouTube"></a>
+                    <a href="https://discord.com/invite/fdwD5SH69t"><img src="{{ static_url_for('static', filename='discord.png') }}"
+                            width="25px" height="25px" alt="Discord icon"></a>
+                    <a href="mailto:maxwell.demaio@gmail.com"><img src="{{ static_url_for('static', filename='email.png') }}"
+                            width="25px" height="25px" alt="Email icon"></a>
+                </div>
+            {% endblock %}
+        </footer>
+        <!--End of my footer-->
+    </main>
+    
+
+    </div>
+    
+   
 </body>
 
 </html>

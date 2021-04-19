@@ -5,7 +5,7 @@
 {% block head %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Bootstrap CSS/JS-->
+    <!-- Bootstrap CSS/JS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"
@@ -18,7 +18,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <!--My CSS-->
+    <!-- My CSS -->
     <link rel="stylesheet" href="{{ static_url_for('static', filename='myStyles.css') }}" />
     <meta name="description"
         content="Maxwell DeMaio's personal website. Here you can find out more about me, the projects I have completed, and the tech stack I use." />
@@ -28,7 +28,7 @@
 <body>
     <div>
         {% block top %}
-            <!--My navbar-->
+            <!-- My navbar -->
             <nav class="navbar fixed-top navbar-light bg-light navbar-expand-lg ">
                 <a class="navbar-brand" href="{{ url_for('index') }}">Maxwell DeMaio</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -51,18 +51,19 @@
                     </ul>
                 </div>
             </nav>
-            <!--End of my navbar-->
+            <!-- End of my navbar -->
         {% endblock %}
     </div>
 
     
     <main class="container">
-        <!--My content-->
+        <!-- My content -->
         {% block content %}{% endblock %}
-        <!--End of my content-->
+        <!-- End of my content -->
 
         <hr class="my-2">
 
+        <!-- My footer -->
         <footer>
             {% block footer %}
                 <div>
@@ -83,7 +84,7 @@
                 </div>
             {% endblock %}
         </footer>
-        <!--End of my footer-->
+        <!-- End of my footer -->
     </main>
     
 

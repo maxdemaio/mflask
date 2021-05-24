@@ -11,6 +11,7 @@ body {
     margin-top: 30px;
 }
 
+
 /** Footer stylings **/
 footer {
     padding-top: 10px;
@@ -27,6 +28,7 @@ footer {
     height: 25px;
     margin-left: 5px;
 }
+
 
 /** Anchor tag stylings **/
 .myLink {
@@ -104,7 +106,7 @@ Non-active <li> tags have class 'paginate_button page-item '**/
     box-shadow: 0 0 0 .2rem #cccccc;
 }
 
-/** Custom search/show form styles **/
+/* Custom search/show form styles */
 .form-control.form-control-sm:focus {
     border: .05rem solid grey;
     box-shadow: 0 0 0 .2rem #cccccc;

@@ -14,7 +14,6 @@ r = redis.Redis.from_url(os.getenv("REDIS_URL"))
 
 # Flask-Static-Digest config
 app.config['FLASK_STATIC_DIGEST_GZIP_FILES'] = False
-app.config['FLASK_STATIC_DIGEST_HOST_URL'] = 'https://maxdem-mflask.s3.amazonaws.com/'
 flask_static_digest = FlaskStaticDigest()
 flask_static_digest.init_app(app)
 

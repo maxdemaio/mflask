@@ -3,29 +3,10 @@
 {% block head %}
 {{ super() }}
 <title>Max DeMaio: 404</title>
-<style>
-    /* Reverse usual style where main has a top margin */
-    main {
-        margin-top: 0px;
-    }
-
-    .error-template {
-        text-align: center;
-    }
-
-    .error-actions {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-
-</style>
 {% endblock %}
 
 {% block top %}
 {{ super() }}
-{% endblock %}
-
-{% block content %}
 <div class="jumbotron jumbotron-fluid text-white" style="background-color: #333;">
     <div class="container">
         <div class="row">
@@ -33,12 +14,11 @@
                 <div class="error-template">
                     <h1 class="display-1">Oops!</h1>
                     <h2 class="display-2">404 Not Found</h2>
-                    <div class="lead">
-                        Sorry, an error has occured, requested page not found.
-                    </div>
+                    <div class="lead">Sorry, an error has occured, requested page not found.</div>
                     <div class="error-actions">
-                        <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">
-                            Take Me Home </a>
+                    <a href="{{ url_for('index') }}" class="btn btn-light btn-lg">
+                        Take Me Home </a>
+                    </div>
                 </div>
             </div>
         </div>

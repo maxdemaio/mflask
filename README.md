@@ -2,7 +2,7 @@
 My personal website built with Flask
 
 **Main libraries used:**
-- [Github wrapper](https://githubpy.readthedocs.io/en/latest/)
+- Github Python wrapper
 - [Redis wrapper](https://redis-py.readthedocs.io/en/stable/)
 
 ## Github API/Redis

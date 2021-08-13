@@ -73,15 +73,36 @@
                     <span id="mySignature">© {{ now.year }} Maxwell DeMaio</span>
                 </div>
                 <div>
-                    <a class="footerImage" href="https://github.com/maxwelldemaio"><img style="margin-right: 1px;" src="{{ static_url_for('static', filename='github.png') }}"
-                            width="30px" height="30px" alt="Github icon"></a>
-                    <a href="https://www.linkedin.com/in/maxwell-demaio"><img
-                            style="margin-right: 1px;" src="{{ static_url_for('static', filename='linkedin.png') }}" width="30px" height="30px"
-                            alt="LinkedIn icon"></a>
-                    <a href="https://twitter.com/maxwelldemaio"><img style="margin-right: 1px;" src="{{ static_url_for('static', filename='twitter.png') }}"
-                            width="30px" height="30px" alt="Twitter icon"></a>
-                    <a href="mailto:maxwell.demaio@gmail.com"><img style="margin-right: 1px;" src="{{ static_url_for('static', filename='email.png') }}"
-                            width="30px" height="30px" alt="Email icon"></a>
+                    <a class="footerImage" href="https://github.com/maxwelldemaio">
+                        <img 
+                            src="{{ static_url_for('static', filename='github1.png') }}"
+                            width="30px" height="30px" 
+                            alt="Github icon">
+                    </a>
+                    <a class="footerImage" href="https://www.linkedin.com/in/maxwell-demaio">
+                        <img
+                            src="{{ static_url_for('static', filename='linkedin1.png') }}" 
+                            width="30px" height="30px"
+                            alt="LinkedIn icon">
+                    </a>
+                    <a class="footerImage" href="https://dev.to/maxwelldemaio">
+                        <img
+                            src="{{ static_url_for('static', filename='devto1.png') }}" 
+                            width="30px" height="30px" 
+                            alt="Dev.to icon">
+                    </a>
+                    <a class="footerImage" href="https://twitter.com/maxwelldemaio">
+                        <img 
+                            src="{{ static_url_for('static', filename='twitter1.png') }}"
+                            width="30px" height="30px" 
+                            alt="Twitter icon">
+                    </a>
+                    <a class="footerImage" href="mailto:maxwell.demaio@gmail.com">
+                        <img 
+                            src="{{ static_url_for('static', filename='mail1.jpg') }}"
+                            width="30px" height="30px" 
+                            alt="Email icon">
+                    </a>
                 </div>
             {% endblock %}
         </footer>

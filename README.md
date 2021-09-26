@@ -1,6 +1,8 @@
 # mflask
 My personal website built with Flask
 
+![Gif of project](./static/mflask.gif)
+
 **Main libraries used:**
 - Github Python wrapper
 - [Redis wrapper](https://redis-py.readthedocs.io/en/stable/)
